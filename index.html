@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> </title>
+    <script defer src="./js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
+        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">
+            <img src="./image/logo.png" alt="foto-logo">
+        </div>
+        <div class="op">
+            <img src="./image/ic-cotizar.png" alt="foto-info">
+            <p>Cotiza online</p>
+            <img src="./image/ic-seguro.png" alt="foto-info">
+            <p>Elegi tu seguro</p>
+            <img src="./image/ic-llamada.png" alt="foto-info">
+            <p>Te llamamos</p>
+            <img src="./image/ic-contratar.png" alt="foto-info">
+            <p>Contrata y disfruta</p>
+        </div>
+
+        <div class="titulo">
+            <h1> CoverCare </h1>
+        </div>
+
+    </header>
+
+
+    </div>
+
+    <form action="" class="cotizador" id="cotizador-form">
+
+        <div class="cot">
+            <div class="auto">
+                <h4>Datos Vehiculo</h4>
+                <div>
+                    <label for="">Marca</label>
+
+                        <select name="marca" id="idMarca" onchange="getModelos()">
+
+                            <option value="" disabled selected hidden> Selecciona la Marca</option>
+                            <option value="Fiat">Fiat</option>
+                            <option value="Peugeot">Peugeot</option>
+                            <option value="VolksWagen">VolksWagen</option>
+                            <option value="Audi">Audi</option>
+                            <option value="Kia">Kia</option>
+                            <option value="Chevrolet">Chevrolet</option>
+
+                        </select>
+                    
+
+                </div>
+                <div>
+                    <label for="">Modelo</label>
+
+                        <select name="modelo" id="idModelo">
+
+                            <option value="" disabled selected hidden> Selecciona el Modelo </option>
+
+                        </select>
+                    
+
+                </div>
+                <div>
+                    <label for="">Año</label> <input type="text" id="idAnio" required>
+                </div>
+            </div>
+
+            <div class="datos">
+                <h4>Tus Datos</h4>
+                <div class="datos1">
+                    <div>
+                        <label for="">Provincia</label>
+
+                            <select name="provincia" id="idProvincia">
+
+                                <option value="" disabled selected hidden> Selecciona la Provincia</option>
+                                <option value="Buenos Aires">Buenos Aires</option>
+                                <option value="Cordoba">Cordoba</option>
+                                <option value="Misiones">Misiones</option>
+                                <option value="Entre Rios">Entre Rios</option>
+                                <option value="Santa fe">Santa fe</option>
+                                <option value="Jujuy">Jujuy</option>
+
+                            </select>
+                        
+
+                    </div>
+                    <div>
+                        <label for="">Localidad</label> <input type="text" id="idLocalidad" required>
+                    </div>
+                    <div>
+                        <label for="">Nombre/s</label> <input type="text" id="idNombre" required>
+                    </div>
+                    <div>
+                        <label for="">Apellido</label> <input type="text" id="idApellido" required>
+                    </div>
+                </div>
+                <div class="datos2">
+                    <div>
+                        <label for="">Email</label> <input type="email" id="idEmail" required>
+                    </div>
+                    <div>
+                        <label for="">Telefono celular</label> <input type="text" id="idTelefono" required>
+                    </div>
+                    <div>
+                        <label for="">Edad</label> <input type="text" id="idEdad" required>
+                    </div>
+                    <div>
+                        <label for="">Genero</label>
+
+                            <select name="genero" id="idGenero">
+
+                                <option value="" disabled selected hidden> Selecciona el genero</option>
+                                <option value="Masculino">Masculino</option>
+                                <option value="Femenino">Femenino</option>
+
+                            </select>
+                        
+
+                    </div>
+                </div>
+                <div class="datos3">
+                    <div>
+                        <label for="">¿Cuando aseguras?</label>
+
+                            <select name="seguro" id="idSeguro">
+
+                                <option value="" disabled selected hidden> Selecciona una opcion</option>
+                                <option value="Ahora">Ahora</option>
+                                <option value="No lo se">No lo se</option>
+
+                            </select>
+                        
+
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit"> Calcular Cotizacion </button>
+    </form>
+
+    </div>
+
+    <section class="datosIngresados">
+        <p>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+                <summary>Mostrar Datos Ingresados </summary>
+            </button> 
+            <img src="./image/left-arrow-1487_128.gif" alt="left-arrow">
+        </p>
+        <div>
+            <div class="collapse collapse-horizontal" id="collapseWidthExample">
+                <div class="card card-body" style="width: 300px;">
+                    <section class="details-info" id="details-info">
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="info">
+
+        <p>¡Hola! Somos <b>CoverCare</b>, tu mejor aliado en el mundo de los seguros de autos. Estamos
+            aquí para simplificar tu vida y hacerte más fácil la tarea de encontrar el seguro perfecto para tu
+            vehículo. Con años de experiencia en el mercado y un profundo conocimiento de la industria de seguros,
+            estamos comprometidos en ofrecerte las mejores cotizaciones y opciones personalizadas para asegurar tu
+            automóvil. Entendemos que la seguridad y tranquilidad al volante son fundamentales, por lo que
+            trabajamos incansablemente para brindarte las coberturas ideales al precio más competitivo. Permítenos
+            acompañarte en este viaje hacia la protección y la tranquilidad en la carretera. <b>¡Bienvenido a
+                CoverCare!</b></p>
+
+    </div>
+
+    <section class="dolar" id="idDolarBlue">
+
+
+
+    </section>
+
+
+    <div class="card-grupo">
+
+        <div class="nuestrosSeguros">
+
+            <h2>Nuestros Seguros</h2>
+
+        </div>
+
+
+        <div class="grupo1">
+
+            <div class="info-card">
+
+                <img src="./image/logo-auto-premium-max20211125010640648.png" alt="info-card">
+                <p>Un seguro de terceros completo, al mejor precio: cobertura de cristales y granizo ilimitada, robo
+                    y
+                    accidentes.</p>
+            </div>
+            <div class="info-card">
+
+                <img src="./image/logo-auto-todo-riesgo20211125010713149.png" alt="info-card">
+                <p>Cobertura total que te protege a vos y a tu auto por completo. La mejor opción sin dudas.</p>
+            </div>
+            <div class="info-card">
+
+                <img src="./image/logo-auto-max-1320211125010500209.png" alt="info-card">
+                <p>La cobertura base para tu auto con el plus de incendio, robo y accidente total.</p>
+            </div>
+            <div class="info-card">
+
+                <img src="./image/logo-auto-max-620211125010532365.png" alt="info-card">
+                <p>La opción más económica que te ofrece protección contra granizo, robo, incendio y accidente
+                    total.
+                </p>
+            </div>
+
+        </div>
+        <div class="grupo2">
+
+            <div class="info-card">
+
+                <img src="./image/logo-auto-max-320211125010517068.png" alt="info-card">
+                <p>Cobertura base con el plus de incendio, robo parcial y total. Incluye servicios y cobertura para
+                    personas.</p>
+            </div>
+            <div class="info-card">
+
+                <img src="./image/logo-auto-max20211125010431958.png" alt="info-card">
+                <p>La cobertura mínima obligatoria que necesitás para salir a la calle con tranquilidad.</p>
+            </div>
+            <div class="info-card">
+
+                <img src="./image/logo-motos20211125010556085.png" alt="info-card">
+                <p>Un seguro con las principales coberturas para que vos y tu moto estén siempre protegidos.</p>
+            </div>
+            <div class="info-card">
+
+                <img src="./image/logo-navega-max20211125010623038.png" alt="info-card">
+                <p>Una cobertura completa para tu barco a la medida de tus viajes.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <footer>
+        <div class="logo">
+
+            <img src="./image/logo.png" alt="foto-logo">
+
+        </div>
+
+        <div class="datos-admin">
+            <h4> Datos Administrativos </h4>
+            <p>Razón Social: CoverCare
+                <br>
+                Cuit: 30-71119543-9
+                <br>
+                Convenio Multilateral: 902-539472-7
+                <br>
+                Domicilio: Madariaga 1364 Parque Industrial de Almirante Brown.
+
+            </p>
+        </div>
+    </footer>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times; </span>
+            <h2> Resultado de la cotizacion </h2>
+
+            <div id="cotizacionInfo">
+
+                <p id="modalMessage"> </p>
+
+            </div>
+
+        </div>
+</body>
+
+</html>

@@ -1,0 +1,742 @@
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+body {
+
+    background-color: #f2f2f2;
+
+}
+
+/* -------------------------------------------- */
+
+header {
+    background-color: #f2f2f2;
+    height: auto;
+    width: 100%;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.5s;
+    flex-wrap: wrap;
+
+
+}
+
+header .logo img {
+    width: 75px;
+}
+
+header .op {
+
+    display: flex;
+    align-items: center;
+
+}
+
+header .op img {
+
+    width: 50px;
+    margin-right: 5px;
+
+}
+
+header .op p {
+
+    font-size: small;
+    margin-right: 50px;
+
+
+
+}
+
+header .titulo h1 {
+    color: #3492eb;
+    font-family: 'Alumni Sans Collegiate One', sans-serif;
+    font-size: 44px;
+    text-shadow: 2px 2px 4px black;
+
+}
+
+/* --------------------------------------- */
+
+body .cotizador {
+
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    width: 100%;
+    padding: 50px;
+    border-radius: 16px;
+
+    background-image: url(../image/banner.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: auto;
+
+}
+
+body .cotizador .cot {
+
+    background-color: #f2f2f2;
+    border-radius: 16px;
+    width: 850px;
+    text-align: center;
+
+}
+
+body .cotizador .cot .auto {
+
+
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+
+    margin: 30px;
+
+}
+body .cotizador .cot .auto div{
+
+    margin: 10px;
+    position: relative;
+
+}
+body .cotizador .cot .auto div label {
+
+    font-size: 18px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgba(0, 0, 0, 1);
+    transition: transform .2s;
+
+}
+
+body .cotizador .cot .auto input {
+
+    /* border-radius: 8px;
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 180px; */
+    color: #706c6c;
+    background: none;
+    border:  solid 1px rgba(0, 0, 0, .1);
+    border-radius: 4px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 10px;
+    cursor: pointer;
+    width: 180px;
+
+}
+body .cotizador .cot .auto input:focus{
+    border: solid 2px #3492eb;
+    outline: none;
+}
+
+body .cotizador .cot .auto select {
+
+    /* border-radius: 8px;
+    font-size: large;
+    width: 180px; */
+    color: #706c6c;
+    background: none;
+    border:  solid 1px rgba(0, 0, 0, .1);
+    border-radius: 4px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 10px;
+    cursor: pointer;
+    width: 180px;
+
+}
+body .cotizador .cot .datos {
+    
+    margin: 30px;
+    position: relative;
+
+}
+
+body .cotizador .cot .datos .datos1 {
+
+    display: flex;
+    flex-direction: row;
+
+}
+body .cotizador .cot .datos .datos1 div{
+
+    margin: 10px;
+
+}
+body .cotizador .cot .datos div label {
+
+    font-size: 18px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgba(0, 0, 0, 1);
+    transition: transform .2s;
+}
+body .cotizador .cot .datos input {
+
+    /* border-radius: 8px;
+    font-size: large;
+    width: 180px; */
+    color: #706c6c;
+    background: none;
+    border:  solid 1px rgba(0, 0, 0, .1);
+    border-radius: 4px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 10px;
+    cursor: pointer;
+    width: 180px;
+}
+body .cotizador .cot .datos input:focus{
+    border: solid 2px #3492eb;
+    outline: none;
+}
+body .cotizador .cot .datos select {
+
+    /* border-radius: 8px;
+    font-size: large;
+    width: 180px; */
+    color: #706c6c;
+    background: none;
+    border:  solid 1px rgba(0, 0, 0, .1);
+    border-radius: 4px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 10px;
+    cursor: pointer;
+    width: 180px;
+}
+
+body .cotizador .cot .datos .datos2 {
+
+    display: flex;
+    flex-direction: row;
+
+}
+body .cotizador .cot .datos .datos2 div{
+
+    margin: 10px;
+
+}
+
+body .cotizador .cot .datos .datos3 {
+
+    display: flex;
+    flex-direction: row;
+
+}
+body .cotizador .cot .datos .datos3 div{
+
+    margin: 15px;
+
+}
+
+body .cotizador .cot button {
+
+    margin: 10px;
+    padding: 10px;
+    border-radius: 16px;
+    background-color: #113946;
+    border: none;
+    padding: 12px;
+    color: white;
+    transition: 0.5s;
+    font-weight: bold;
+    font-size: large;
+
+}
+
+body .cotizador .cot button:hover {
+
+
+    box-shadow: 0px 0px 25px #113946;
+    transition: 0.5s;
+    cursor: pointer;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+body .info {
+
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+    border-radius: 16px;
+    padding: 30px;
+    margin: 30px;
+    border: solid 4px #3492eb;
+
+}
+/* -------------------------------------------- */
+
+body .datosIngresados{
+
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-bottom: 50px;
+
+}
+body .datosIngresados .btn-primary{
+
+    padding: 8px;
+
+}
+
+/* -------------------------------------------- */
+
+body .dolar{
+
+    margin: 30px;
+    background-color: grey;
+    padding: 15px;
+    border-radius: 5px;
+    width: 600px;
+    border: solid 3px #ffffff;
+    box-shadow: 0px 0px 43px black;
+
+
+}
+body .dolar h4{
+
+    color: black;
+
+}
+
+/* -------------------------------------------- */
+body  h1{
+
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    color: black;
+    margin: 10px;
+
+
+}
+
+body  .planes{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 150px;
+    background-image: url(../image/N4RESUNGYZCU5CM6N5NFEKQIIY.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(5px);
+    padding: 50px;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    box-shadow: 0px 0px 40px black;
+
+}
+body  .planes .card{
+
+    border-radius: 16px;
+    margin: 50px;
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+
+}
+body  .planes .card img{
+
+    width: 80%;
+
+}
+body  .planes .card h5{
+
+    font-weight: bold;
+
+}
+body .planes .card .card-body .closeAlert1{
+
+    color: white;
+    padding: 5px;
+    background-color: #3492eb;
+    border: solid 1px black;
+    border-radius: 5px;
+
+
+}
+
+body .planes .card .card-body .closeAlert2{
+
+    color: white;
+    padding: 5px;
+    background-color: #3492eb;
+    border: solid 1px black;
+    border-radius: 5px;
+
+
+}
+
+body .planes .card .card-body .closeAlert3{
+
+    color: white;
+    padding: 5px;
+    background-color: #3492eb;
+    border: solid 1px black;
+    border-radius: 5px;
+
+
+}
+/* -------------------------------------------- */
+
+
+/* --------------------------------------- */
+
+body .img {
+
+    width: 100%;
+    height: 433px;
+
+
+}
+
+/* --------------------------------------- */
+.modal {
+
+    backdrop-filter: blur(5px);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    position: fixed;
+    display: none;
+
+    
+}
+
+.modal-content {
+    background-color: #f2f2f2;
+    color: black;
+    font-size: large;
+    padding: 30px;
+    margin: 10%;
+    border: 2px solid #113946;
+    border-radius: 16px;
+    width: 80%;
+ 
+}
+
+.close {
+    color: black;
+    float: right;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* -------------------------------------------- */
+
+body .card-grupo {
+
+    margin: 100px;
+
+}
+body .card-grupo .nuestrosSeguros{
+    
+    text-align: center;
+
+}
+
+body .card-grupo .grupo1 {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+body .card-grupo .grupo1 .info-card {
+
+    background-color: white;
+    padding: 35px;
+    border-radius: 21px;
+    margin: 40px;
+
+}
+
+body .card-grupo .grupo2 {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+body .card-grupo .grupo2 .info-card {
+    background-color: white;
+    padding: 35px;
+    border-radius: 21px;
+    margin: 40px;
+
+}
+
+/* -------------------------------------------- */
+
+footer {
+    background-color: rgb(34, 40, 49);
+    border-radius: 22px;
+    margin-top: 30px;
+    padding: 25px;
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+
+    flex-wrap: wrap;
+
+}
+
+footer .logo {
+    margin: 5px;
+    padding: 25px;
+
+
+}
+
+footer .logo img {
+
+    width: 140px;
+
+}
+
+footer .logo h3 {
+    color: #f2f2f2;
+    font-family: 'Dancing Script', cursive;
+    font-size: 17px;
+
+}
+
+footer .logo p {
+    color: #f2f2f2;
+
+}
+
+footer .datos-admin {
+    color: #f2f2f2;
+    padding: 25px;
+    text-align: center;
+}
+
+/* -------------------------------------------- */
+
+@media (max-width: 1200px) {
+    
+    body .planes{
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+
+    }
+
+    body .planes .card p{
+
+        text-align: center;
+
+    }
+
+}
+
+@media (max-width: 800px) {
+    body .cotizador {
+
+        display: flex;
+        flex-direction: column;
+
+    }
+}
+
+@media (max-width: 800px) {
+    body .cotizador .cot .auto input {
+        padding: 0px;
+        width: auto;
+    }
+
+    body .cotizador .cot .datos input {
+        padding: 0px;
+        width: auto;
+    }
+}
+
+@media (max-width: 635px) {
+    body .cotizador .cot .datos {
+
+        width: 85%;
+
+    }
+
+}
+
+@media (max-width: 1165px) {
+    body .card-grupo .grupo1 {
+
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    body .card-grupo .grupo2 {
+
+        display: flex;
+        flex-direction: column;
+
+    }
+
+}
+
+@media (max-width: 980px) {
+
+    body header .op img {
+
+        width: 30px;
+        margin: 2px;
+
+    }
+
+    body header .op p {
+
+        font-size: 10px;
+        margin: 2px;
+
+    }
+
+}
+
+@media (max-width: 960px) {
+    body .cotizador{
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+
+    }
+    body .cotizador .button{
+
+        width: auto;
+
+    }
+    body .cotizador .cot{
+
+        width: 40%;
+        margin: 5px;
+    }
+    body .cotizador .cot .auto  {
+
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        align-items: start;
+
+    }
+    body .cotizador .cot .datos  {
+
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        align-items: start;
+
+    }
+    body .cotizador .cot .datos .datos1  {
+
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        align-items: start;
+
+    }
+    body .cotizador .cot .datos .datos2  {
+
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        align-items: start;
+
+    }
+    body .cotizador .cot .datos .datos3  {
+
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        align-items: start;
+
+    }
+    body .cotizador .cot .auto div select{
+        width: 100%;
+    }
+    body .cotizador .cot .auto div input{
+        width: 100%;
+    }
+    body .cotizador .cot .datos .datos1 div select{
+        width: 100%;
+    }
+    body .cotizador .cot .datos .datos1 div input{
+        width: 100%;
+    }
+    body .cotizador .cot .datos .datos2 div select{
+        width: 100%;
+    }
+    body .cotizador .cot .datos .datos2 div input{
+        width: 100%;
+    }
+    body .cotizador .cot .datos .datos3 div select{
+        width: 100%;
+    }
+    body .cotizador .cot .datos .datos3 div input{
+        width: 100%;
+    }
+}
+
+@media (max-width: 700px) {
+
+    body .dolar{
+
+        width: auto;
+
+    }
+    body .op{
+
+        display: none;
+
+    }
+    body .cotizador .cot{
+
+        width: 80%;
+
+    }
+
+}
+
+
+@media (max-width: 1430px) {
+
+    body .planes{
+
+        width: 100%;
+
+
+    }
+
+}
+
