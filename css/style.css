@@ -361,6 +361,11 @@ body  .planes .card h5{
     font-weight: bold;
 
 }
+body .planes .card .card-body img{
+
+    width: 50px;
+
+}
 body .planes .card .card-body .closeAlert1{
 
     color: white;

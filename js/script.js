@@ -19,8 +19,6 @@ const edad = document.querySelector("#idEdad");
 const genero = document.querySelector("#idGenero");
 
 const seguro = document.querySelector("#idSeguro");
-const precio = document.querySelector("#idPrecio");
-const descuento = 0.25;
 
 /* --------------------------------------------------------------------------------------------------------------------------------------- */
 
@@ -53,7 +51,19 @@ const Marcas = [
 
 /* --------------------------------------------------------------------------------------------------------------------------------------- */
 
-let clientes = [];
+class Planes {
+
+    constructor(nombre, precio, duracion, descuento){
+
+    this.nombre = nombre;
+    this.precio = precio;
+    this.duracion = duracion;
+    this.descuento = descuento;
+
+    }
+
+}
+
 
 /* --------------------------------------------------------------------------------------------------------------------------------------- */
 
@@ -182,24 +192,28 @@ formCotizador.addEventListener("change", function (e) {
 
 /* --------------------------------------------------------------------------------------------------------------------------------------- */
 
+let planBronce = new Planes();
+let planPlata = new Planes();
+let planOro = new Planes();
+
 document.getElementById("cotizador-form").addEventListener("submit", function (e) {
 
     e.preventDefault();
 
-    if (isNaN(precio)) {
-        showModal("Por favor, introduce un precio valido!!");
-    }
     if (marca.value == "Fiat" || marca.value == "Peugeot" || marca.value == "VolskWagen") {
 
-        precioFinalBronce = 36000 - (36000 * descuento);
-        precioFinalPlata = 59999 - (59999 * descuento);
-        precioFinalOro = 72500 - (72500 * descuento);
-
+        planBronce = new Planes("Responsabilidad Civil", 36000, "6 meses", 0.10);
+        planPlata = new Planes("Terceros Completos", 59999, "1 año", 0.20);
+        planOro = new Planes("Todo Riesgo", 72500, "2 años", 0.30);
+        
+        
+    
     } else if (marca.value == "Audi" || marca.value == "Kia" || marca.value == "Chevrolet") {
 
-        precioFinalBronce = 80000 - (80000 * descuento);
-        precioFinalPlata = 99000 - (99000 * descuento);
-        precioFinalOro = 110000 - (110000 * descuento);
+        planBronce = new Planes("Responsabilidad Civil", 80000, "6 meses", 0.10);
+        planPlata = new Planes("Terceros Completos", 99000, "1 año", 0.20);
+        planOro = new Planes("Todo Riesgo", 110000, "2 años", 0.30);
+
     }
 
     setTimeout(() => {
@@ -235,34 +249,34 @@ document.getElementById("cotizador-form").addEventListener("submit", function (e
 
             <p> <b>Email:</b> ${email.value}      <b>Telefono:</b> ${telefono.value}        <b>Edad:</b> ${edad.value}        <b>Genero:</b> ${genero.value}</p>
 
-            <p> <b>Cuando aseguro:</b> ${seguro.value}        <b>Descuento:</b> ${descuento}%  </p>
+            <p> <b>Cuando aseguro:</b> ${seguro.value}</p>
 
             <h1> ¡Elegi tu Plan! </h1>
         <section class="planes">
             <div class="card" style="width: 18rem;">
                 <img src="../image/bronce.jpg" class="card-img-top" alt="foto-medalla">
                 <div class="card-body">
-                  <h5 class="card-title">Responsabilidad Civil</h5>
+                  <h5 class="card-title">${planBronce.nombre}</h5>
                   <p class="card-text">Cubre los gastos médicos y daños materiales que puedas causar a otras personas o propiedades en un accidente en el que seas el culpable. Tener un seguro de responsabilidad civil te protege de enfrentar gastos por accidentes imprevistos.</p>
-                  <b>Precio Final:</b> $${precioFinalBronce}</p>
+                  <b>Precio Final:</b> <br><img src="./image/mejor-precio.gif" alt="foto-logo">$${planBronce.precio - (planBronce.precio * planBronce.descuento)}</p>
                   <button class="closeAlert1" onclick="mostrarAlerta()">Contratar</button>
                 </div>
               </div>
               <div class="card" style="width: 18rem;">
                 <img src="../image/plata.jpg" class="card-img-top" alt="foto-medalla">
                 <div class="card-body">
-                  <h5 class="card-title">Terceros Completos</h5>
+                  <h5 class="card-title">${planPlata.nombre}</h5>
                   <p class="card-text">Además de estar protegido contra los costos que puedas causar a otros conductores o propiedades, también cuentas con la tranquilidad de que tu vehículo estará cubierto en caso de daños por accidentes o incluso robo.</p>
-                  <b>Precio Final:</b> $${precioFinalPlata}</p>
+                  <b>Precio Final:</b> <br><img src="./image/mejor-precio.gif" alt="foto-logo">$${planPlata.precio - (planPlata.precio * planPlata.descuento)}</p>
                     <button class="closeAlert2" onclick="mostrarAlerta()">Contratar</button>
                   </div>
               </div>
               <div class="card" style="width: 18rem;">
                 <img src="../image/oro.jpg" class="card-img-top" alt="foto-medalla">
                 <div class="card-body">
-                  <h5 class="card-title">Todo Riesgo</h5>
+                  <h5 class="card-title">${planOro.nombre}</h5>
                   <p class="card-text">Puedes estar seguro y tranquilo de que tu vehículo estará protegido sin importar las circunstancias. Ya sea por daños causados por un accidente, un robo, actos de vandalismo o incluso eventos naturales como granizo, tu inversión está segura.</p>
-                  <b>Precio Final:</b> $${precioFinalOro}</p>
+                  <b>Precio Final:</b> <br><img src="./image/mejor-precio.gif" alt="foto-logo">$${planOro.precio - (planOro.precio * planOro.descuento)}</p>
                   <button class="closeAlert3" onclick="mostrarAlerta()">Contratar</button>
                 </div>
               </div>
