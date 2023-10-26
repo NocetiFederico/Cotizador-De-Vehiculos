@@ -2,7 +2,7 @@
 /* --------------------------------------------------------------------------------------------------------------------------------------- */
 
 const formCotizador = document.querySelector("#cotizador-form");
-const infoActual = document.querySelector("#details-info");
+const infoActual = document.querySelector("#infoReal");
 
 const marca = document.querySelector("#idMarca");
 const modelo = document.querySelector("#idModelo");
