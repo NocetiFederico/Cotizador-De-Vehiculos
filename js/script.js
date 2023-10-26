@@ -200,6 +200,7 @@ document.getElementById("cotizador-form").addEventListener("submit", function (e
 
     e.preventDefault();
 
+    //seteo precios, descuentos y duracion de los planes segun la marca
     if (marca.value == "Fiat" || marca.value == "Peugeot" || marca.value == "VolskWagen") {
 
         planBronce = new Planes("Responsabilidad Civil", 36000, "6 meses", 0.10);
@@ -222,7 +223,7 @@ document.getElementById("cotizador-form").addEventListener("submit", function (e
         cotizacionInfo.innerHTML = `
                 <p>Cotizando...</p>
                 <div class="spinner-border text-dark" role="status">
-                     <span class="visually-hidden">Loading...</span>
+                    <span class="visually-hidden">Loading...</span>
                 </div>
             `;
 
@@ -235,6 +236,7 @@ document.getElementById("cotizador-form").addEventListener("submit", function (e
     setTimeout(() => {
         const cotizacionInfo = document.getElementById("cotizacionInfo");
 
+        //informacion que aparece en el modal
         cotizacionInfo.innerHTML = `
             <h1>🔥 ¡Descuento especial online!</h1>
             <p>⏱ ¡Apurate! Descuentos válidos por las próximas 4 horas.</p>
@@ -256,30 +258,39 @@ document.getElementById("cotizador-form").addEventListener("submit", function (e
             <div class="card" style="width: 18rem;">
                 <img src="../image/bronce.jpg" class="card-img-top" alt="foto-medalla">
                 <div class="card-body">
-                  <h5 class="card-title">${planBronce.nombre}</h5>
-                  <p class="card-text">Cubre los gastos médicos y daños materiales que puedas causar a otras personas o propiedades en un accidente en el que seas el culpable. Tener un seguro de responsabilidad civil te protege de enfrentar gastos por accidentes imprevistos.</p>
-                  <b>Precio Final:</b> <br><img src="./image/mejor-precio.gif" alt="foto-logo">$${planBronce.precio - (planBronce.precio * planBronce.descuento)}</p>
-                  <button class="closeAlert1" onclick="mostrarAlerta()">Contratar</button>
+                    <h5 class="card-title">${planBronce.nombre}</h5>
+                    <p class="card-text">Cubre los gastos médicos y daños materiales que puedas causar a otras personas o propiedades en un accidente en el que seas el culpable. Tener un seguro de responsabilidad civil te protege de enfrentar gastos por accidentes imprevistos.</p>
+                    <b>Duracion:</b> ${planBronce.duracion}
+                    <b>Descuento:</b> 10%
+                    <b>Precio:</b> $${planBronce.precio}
+                    <b>Precio Final:</b> <br><img src="./image/mejor-precio.gif" alt="foto-logo">$${planBronce.precio - (planBronce.precio * planBronce.descuento)}</p>
+                    <button class="closeAlert1" onclick="mostrarAlerta()">Contratar</button>
                 </div>
-              </div>
-              <div class="card" style="width: 18rem;">
+            </div>
+            <div class="card" style="width: 18rem;">
                 <img src="../image/plata.jpg" class="card-img-top" alt="foto-medalla">
                 <div class="card-body">
-                  <h5 class="card-title">${planPlata.nombre}</h5>
-                  <p class="card-text">Además de estar protegido contra los costos que puedas causar a otros conductores o propiedades, también cuentas con la tranquilidad de que tu vehículo estará cubierto en caso de daños por accidentes o incluso robo.</p>
-                  <b>Precio Final:</b> <br><img src="./image/mejor-precio.gif" alt="foto-logo">$${planPlata.precio - (planPlata.precio * planPlata.descuento)}</p>
+                    <h5 class="card-title">${planPlata.nombre}</h5>
+                    <p class="card-text">Además de estar protegido contra los costos que puedas causar a otros conductores o propiedades, también cuentas con la tranquilidad de que tu vehículo estará cubierto en caso de daños por accidentes o incluso robo.</p>
+                    <b>Duracion:</b> ${planPlata.duracion}
+                    <b>Descuento:</b> 20%
+                    <b>Precio:</b> $${planPlata.precio}
+                    <b>Precio Final:</b> <br><img src="./image/mejor-precio.gif" alt="foto-logo">$${planPlata.precio - (planPlata.precio * planPlata.descuento)}</p>
                     <button class="closeAlert2" onclick="mostrarAlerta()">Contratar</button>
-                  </div>
-              </div>
-              <div class="card" style="width: 18rem;">
+                    </div>
+                </div>
+            <div class="card" style="width: 18rem;">
                 <img src="../image/oro.jpg" class="card-img-top" alt="foto-medalla">
                 <div class="card-body">
-                  <h5 class="card-title">${planOro.nombre}</h5>
-                  <p class="card-text">Puedes estar seguro y tranquilo de que tu vehículo estará protegido sin importar las circunstancias. Ya sea por daños causados por un accidente, un robo, actos de vandalismo o incluso eventos naturales como granizo, tu inversión está segura.</p>
-                  <b>Precio Final:</b> <br><img src="./image/mejor-precio.gif" alt="foto-logo">$${planOro.precio - (planOro.precio * planOro.descuento)}</p>
-                  <button class="closeAlert3" onclick="mostrarAlerta()">Contratar</button>
+                    <h5 class="card-title">${planOro.nombre}</h5>
+                    <p class="card-text">Puedes estar seguro y tranquilo de que tu vehículo estará protegido sin importar las circunstancias. Ya sea por daños causados por un accidente, un robo, actos de vandalismo o incluso eventos naturales como granizo, tu inversión está segura.</p>
+                    <b>Duracion:</b> ${planOro.duracion}
+                    <b>Descuento:</b> 30%
+                    <b>Precio:</b> $${planOro.precio}
+                    <b>Precio Final:</b> <br><img src="./image/mejor-precio.gif" alt="foto-logo">$${planOro.precio - (planOro.precio * planOro.descuento)}</p>
+                    <button class="closeAlert3" onclick="mostrarAlerta()">Contratar</button>
                 </div>
-              </div>
+            </div>
         </section>
         `
 
@@ -293,12 +304,11 @@ document.getElementById("cotizador-form").addEventListener("submit", function (e
 
 /* --------------------------------------------------------------------------------------------------------------------------------------- */
 
+//Esta funcion lo que hace es que si clickeas fuera de  la pantalla, en la X o en el boton contratar, se te cierra el modal
 const showModal = () => {
 
     const modal = document.getElementById("myModal");
     modal.style.display = "block";
-
-    //Cerrar el modal cuando hacemos click en la X o en cualquier lado
 
     const closeBtn = document.querySelector(".close");
 
